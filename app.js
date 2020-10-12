@@ -26,6 +26,9 @@ app.use(function(req, res, next) {
 });
 
 // router here
+app.get('/',(req,res)=>{
+    res.send('server OK');
+})
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/lists', listRouter);
