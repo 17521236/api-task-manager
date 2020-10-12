@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const authRouter = require('./routes/auth.route')
 const userRouter = require('./routes/user.route')
@@ -32,5 +32,5 @@ app.use('/lists', listRouter);
 
 // connection
 app.listen(port, () => {
-    console.log('Port 3000 is running ...')
+    console.log(`Port ${port} is running ...`)
 })
